@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\Homepage;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Homepage::class, 'index'])->name('homepage');
+Route::get('sayfa', [Homepage::class, 'index'])->name('paginate');
+Route::get('/kategori/{cat}', [Homepage::class, 'category'])->name('category');
+Route::get('/{cat}/{slug}', [Homepage::class, 'single'])->name('single');
+
