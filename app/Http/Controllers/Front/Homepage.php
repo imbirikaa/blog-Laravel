@@ -24,7 +24,7 @@ class Homepage extends Controller
     public function index()
     {
 
-        $data['articles'] = Article::orderBy('created_at', 'DESC')->paginate(2);
+        $data['articles'] = Article::orderBy('created_at', 'DESC')->paginate(7);
         $data['articles']->withPath(url('sayfa'));
         return view('front.homepage', $data);
     }
@@ -45,7 +45,7 @@ class Homepage extends Controller
     {
         $cate = Category::whereSlug($slug)->first() ?? abort(403, 'Böyle bir Kategori BULUNAMADI !');
         $data['category'] = $cate;
-        $data['articles'] = Article::whereCategory($cate->id)->orderBy('created_at', 'DESC')->paginate(1);
+        $data['articles'] = Article::whereCategory($cate->id)->orderBy('created_at', 'DESC')->paginate(7);
 
 
 

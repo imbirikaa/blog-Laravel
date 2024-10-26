@@ -4,7 +4,7 @@
 <div class="post-preview">
     <a href="{{route('single',[$arc->getCategory->slug , $arc->slug])}}">
         <h2 class="post-title">{{$arc->title}}</h2>
-        <img src="{{$arc->image}}" alt="" style="width: 800px; height: 400px;">
+        <img src="{{asset($arc->image)}}" alt="" style="width: 800px; height: 400px;">
         <h3 class="post-subtitle">{!!Str::limit($arc->content,80)!!}</h3>
     </a>
     <p class="post-meta">

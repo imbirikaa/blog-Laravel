@@ -13,11 +13,13 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        $cats=['Eğlencer','Bilişim','Gezi','Teknokoji','Sağlık','Spor','Günlük Yaşam'];
+        $cats=['Genel','Eğlencer','Bilişim','Gezi','Teknokoji','Sağlık','Spor','Günlük Yaşam'];
         foreach ($cats as $cat) {
         DB::table('categories')->insert([
             'name' => $cat,
             'slug' => str::slug($cat),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);}
     }
 }

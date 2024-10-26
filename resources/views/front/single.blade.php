@@ -1,6 +1,6 @@
 @extends('front.layout.master')
 @section('title',$article->title)
-@section('bg',$article->image)
+@section('bg',asset($article->image))
 
 @section('content')
 
